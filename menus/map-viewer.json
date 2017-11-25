@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle map-viewer",
+        "command": "map-viewer:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "map-viewer",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "map-viewer:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

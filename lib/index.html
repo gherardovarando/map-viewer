@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+
+
+</head>
+<script>
+</script>
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<body>
+  <div id='map'>
+  </div>
+</body>
+
+
+<script>
+  const {
+    util
+  } = require('electrongui')
+  window.Papa = require('papaparse')
+  require('leaflet')
+  require('leaflet-csvtiles')
+  require('leaflet-geometryutil')
+  require('leaflet-draw')
+  util.insertModuleCSS('leaflet', 'leaflet.css')
+  util.insertModuleCSS('leaflet-draw', 'leaflet.draw.css')
+  require('leaflet-multilevel')
+  require(`leaflet-snap`)
+  require('leaflet-map-builder')
+  const {
+    ipcRenderer
+  } = require('electron')
+  const CRSs = {
+    simple: L.CRS.Simple,
+    EPSG3395: L.CRS.EPSG3395,
+    EPSG3857: L.CRS.EPSG3857,
+    EPSG4326: L.CRS.EPSG4326
+  }
+  let map
+  let builder = L.mapBuilder()
+
+  ipcRenderer.on('setMap', (event, message) => {
+    if (map) map.remove()
+    let mapOpt = message
+    mapOpt.crs = CRSs[message.crs] || CRSs['simple']
+    map = L.map('map', mapOpt)
+    builder.setMap(map)
+  })
+  ipcRenderer.on('setConfiguration', (event, message) => {
+    builder.setConfiguration(message)
+    document.documentElement.className = 'reflow_' + (new Date()).getTime();
+  })
+  ipcRenderer.on('setOptions', (event, message) => {
+    message = message || {}
+    message.controls = message.controls || {}
+    message.controls.layers = true
+    builder.setOptions(message)
+  })
+</script>
+
+
+</html>
