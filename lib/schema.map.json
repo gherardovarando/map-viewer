@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://github.com/gherardovarando/map.json.schema",
+    "description": "schema for a map.json object",
+    "type": "object",
+    "required": ["type"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["map", "MAP", "Map"]
+        },
+        "name": {
+            "type": "string"
+        },
+        "layers": {
+            "type": ["array", "object"],
+            "items": {
+                "$ref": "#/definitions/layer"
+            }
+        },
+        "authors": {
+            "type": "string"
+        },
+        "date": {
+            "type": "string"
+        },
+        "crs": {
+            "type": "string",
+            "enum": ["simple", "EPSG3395", "EPSG3857", "EPSG4326", "custom"]
+        }
+    },
+    "definitions": {
+        "layer": {
+          "type": "object",
+          "properties":{
+             "type":{
+               "type": "string"
+             }
+          },
+          "required": ["type"]
+        }
+    }
+}

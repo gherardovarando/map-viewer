@@ -15,7 +15,7 @@
           "label": "map-viewer",
           "submenu": [
             {
-              "label": "Toggle",
+              "label": "Open",
               "command": "map-viewer:toggle"
             }
           ]
