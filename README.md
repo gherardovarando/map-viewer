@@ -5,7 +5,7 @@
 ##### it uses [leaflet](http://leafletjs.com/) and [leaflet-map-builder](https://www.npmjs.com/package/leaflet-map-builder).
 
 ### How to use
-![map-viewer gui in action](images/myimage.gif)
+![map-viewer gui in action](images/myimage.gif){:height="50px"}
 
 Open a valid map.json file and lunch the viewer with **Packages -> map-viewer -> open**.
 
