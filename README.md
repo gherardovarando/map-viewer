@@ -6,6 +6,7 @@
 
 ### How to use
 ![map-viewer gui in action](https://gherardovarando.github.io/map-viewer/images/myimage.gif)
+
 Open a valid map.json file and lunch the viewer with **Packages -> map-viewer -> open**.
 
 The map will be updated every time the file is saved.
