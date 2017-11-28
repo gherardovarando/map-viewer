@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle map-viewer",
-        "command": "map-viewer:toggle"
+        "label": "Toggle Map Viewer",
+        "command": "map-viewer:open"
       }
     ]
   },
@@ -12,11 +12,20 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "map-viewer",
+          "label": "Map Viewer",
           "submenu": [
             {
               "label": "Open",
-              "command": "map-viewer:toggle"
+              "command": "map-viewer:open"
+            },
+            {
+              "label": "New",
+              "submenu":[
+                {
+                  "label": "Map",
+                  "command": "map-viewer:newmap"
+                }
+              ]
             }
           ]
         }

@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "map-viewer:toggle"
+    "ctrl-alt-m": "map-viewer:open"
   }
 }

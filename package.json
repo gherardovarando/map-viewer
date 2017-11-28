@@ -5,7 +5,10 @@
   "description": "map visualizer from map.json",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "map-viewer:toggle"
+    "atom-workspace": [
+      "map-viewer:open",
+      "map-viewer:newmap"
+    ]
   },
   "repository": "https://github.com/gherardovarando/map-viewer",
   "license": "MIT",
@@ -16,6 +19,8 @@
     "ajv": "^5.5.0",
     "djv": "^2.0.0",
     "leaflet": "^1.2.0",
-    "leaflet-map-builder": "^0.2.6"
+    "leaflet-csvtiles": "^0.3.1",
+    "leaflet-map-builder": "^0.2.6",
+    "leaflet-multilevel": "0.0.1"
   }
 }
