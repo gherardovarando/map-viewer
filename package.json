@@ -7,14 +7,15 @@
   "activationCommands": {
     "atom-workspace": "map-viewer:toggle"
   },
-  "repository": "https://github.com/atom/map-viewer",
+  "repository": "https://github.com/gherardovarando/map-viewer",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "ajv": "^5.5.0",
     "djv": "^2.0.0",
-    "leaflet": "*",
-    "leaflet-map-builder": "*"
+    "leaflet": "^1.2.0",
+    "leaflet-map-builder": "^0.2.6"
   }
 }
