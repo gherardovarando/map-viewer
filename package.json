@@ -15,6 +15,10 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
+  "styleSheets": [
+    "leaflet.css",
+    "map-viewer.less"
+  ],
   "dependencies": {
     "ajv": "^5.5.0",
     "djv": "^2.0.0",
