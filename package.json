@@ -1,7 +1,7 @@
 {
   "name": "map-viewer",
   "main": "./lib/map-viewer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "map visualizer from map.json",
   "keywords": [],
   "activationCommands": {
