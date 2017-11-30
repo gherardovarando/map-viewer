@@ -118,76 +118,82 @@
     },
     "layer": {
       "description": "layer",
-      "allOf": [{
-          "type": "object",
-          "required": ["type"],
-          "properties": {
-            "type": {
-              "type": "string"
-            },
-            "name": {
-              "type": "string"
-            },
-            "role": {
-              "anyOf": [{
-                "type": "string"
-              }, {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }]
-            },
-            "author": {
-              "type": "string"
-            },
-            "details": {
-              "type": "string"
-            },
-            "multiLevel": {
-              "type": "boolean"
-            },
-            "baseLayer": {
-              "type": "boolean"
-            },
-            "popup": {
-              "$ref": "#/definitions/popup"
-            },
-            "tooltip": {
-              "$ref": "#/definitions/tooltip"
-            }
-          }
+      "anyOf": [{
+          "type": "string"
         },
         {
-          "anyOf": [{
-            "$ref": "#/definitions/tileLayer"
-          }, {
-            "$ref": "#/definitions/tileLayerWMS"
-          }, {
-            "$ref": "#/definitions/imageOverlay"
-          }, {
-            "$ref": "#/definitions/featureGroup"
-          }, {
-            "$ref": "#/definitions/layerGroup"
-          }, {
-            "$ref": "#/definitions/GeoJSON"
-          }, {
-            "$ref": "#/definitions/polyline"
-          }, {
-            "$ref": "#/definitions/polygon"
-          }, {
-            "$ref": "#/definitions/rectangle"
-          }, {
-            "$ref": "#/definitions/circle"
-          }, {
-            "$ref": "#/definitions/marker"
-          }, {
-            "$ref": "#/definitions/circleMarker"
-          }, {
-            "$ref": "#/definitions/csvTiles"
-          }, {
-            "$ref": "#/definitions/deepZoom"
-          }]
+          "allOf": [{
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "role": {
+                  "anyOf": [{
+                    "type": "string"
+                  }, {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }]
+                },
+                "author": {
+                  "type": "string"
+                },
+                "details": {
+                  "type": "string"
+                },
+                "multiLevel": {
+                  "type": "boolean"
+                },
+                "baseLayer": {
+                  "type": "boolean"
+                },
+                "popup": {
+                  "$ref": "#/definitions/popup"
+                },
+                "tooltip": {
+                  "$ref": "#/definitions/tooltip"
+                }
+              }
+            },
+            {
+              "anyOf": [{
+                "$ref": "#/definitions/tileLayer"
+              }, {
+                "$ref": "#/definitions/tileLayerWMS"
+              }, {
+                "$ref": "#/definitions/imageOverlay"
+              }, {
+                "$ref": "#/definitions/featureGroup"
+              }, {
+                "$ref": "#/definitions/layerGroup"
+              }, {
+                "$ref": "#/definitions/GeoJSON"
+              }, {
+                "$ref": "#/definitions/polyline"
+              }, {
+                "$ref": "#/definitions/polygon"
+              }, {
+                "$ref": "#/definitions/rectangle"
+              }, {
+                "$ref": "#/definitions/circle"
+              }, {
+                "$ref": "#/definitions/marker"
+              }, {
+                "$ref": "#/definitions/circleMarker"
+              }, {
+                "$ref": "#/definitions/csvTiles"
+              }, {
+                "$ref": "#/definitions/deepZoom"
+              }]
+            }
+          ]
         }
       ]
     },
