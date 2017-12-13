@@ -1,5 +1,7 @@
 {
   "atom-workspace": {
-    "ctrl-alt-m": "map-viewer:open"
+    "ctrl-alt-m": "map-viewer:open",
+    "ctrl-pageup": "map-viewer:levelUp",
+    "ctrl-pagedown": "map-viewer:levelDown"
   }
 }
