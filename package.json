@@ -1,31 +1,31 @@
 {
-  "name": "map-viewer",
-  "main": "./lib/map-viewer",
-  "version": "0.4.0",
-  "description": "map visualizer from map.json",
-  "keywords": [],
-  "activationCommands": {
-    "atom-workspace": [
-      "map-viewer:open",
-      "map-viewer:newmap"
-    ]
-  },
-  "repository": "https://github.com/gherardovarando/map-viewer",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "styleSheets": [
-    "leaflet.css",
-    "leaflet.draw.css",
-    "map-viewer.less"
-  ],
-  "dependencies": {
-    "ajv": "^5.5.0",
-    "leaflet": "^1.2.0",
-    "leaflet-csvtiles": "^0.3.1",
-    "leaflet-draw": "^0.4.13",
-    "leaflet-map-builder": "^0.3.1",
-    "leaflet-multilevel": "0.0.1"
-  }
+	"name": "map-viewer",
+	"version": "0.4.0",
+	"description": "map visualizer from map.json",
+	"keywords": [],
+	"license": "MIT",
+	"main": "./lib/map-viewer",
+	"repository": {},
+	"dependencies": {
+		"ajv": "^5.5.0",
+		"leaflet": "^1.2.0",
+		"leaflet-csvtiles": "^0.3.1",
+		"leaflet-editable": "^1.1.0",
+		"leaflet-map-builder": "^0.3.1",
+		"leaflet-multilevel": "0.0.1"
+	},
+	"engines": {
+		"atom": ">=1.0.0 <2.0.0"
+	},
+	"activationCommands": {
+		"atom-workspace": [
+			"map-viewer:open",
+			"map-viewer:newmap"
+		]
+	},
+	"styleSheets": [
+		"leaflet.css",
+		"leaflet.draw.css",
+		"map-viewer.less"
+	]
 }
