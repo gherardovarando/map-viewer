@@ -4,6 +4,14 @@
       {
         "label": "Toggle Map Viewer",
         "command": "map-viewer:open"
+      },
+      {
+        "label": "New Tilelayer",
+        "command": "map-viewer:newtilelayer"
+      },
+      {
+        "label": "New marker",
+        "command": "map-viewer:newmarker"
       }
     ]
   },
