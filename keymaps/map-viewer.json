@@ -3,5 +3,12 @@
     "ctrl-alt-m": "map-viewer:open",
     "ctrl-pageup": "map-viewer:levelUp",
     "ctrl-pagedown": "map-viewer:levelDown"
+  },
+  "atom-text-editor":{
+    "ctrl-alt-n m": "map-viewer:newmarker",
+    "ctrl-alt-n p": "map-viewer:newpolygon",
+    "ctrl-alt-n l": "map-viewer:newpolyline",
+    "ctrl-alt-n t": "map-viewer:newtilelayer",
+    "ctrl-alt-n g": "map-viewer:newgeojson"
   }
 }
