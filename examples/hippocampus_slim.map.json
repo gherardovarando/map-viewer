@@ -1,0 +1,54 @@
+{
+  "type": "map",
+  "multilevel": true,
+  "layers": ["vglut1_tiles_all/vglut1_tiles_all.json",
+    "points/centroid_Hipocampo%20HBP21%20id4%20corte%2040%20vGlut1_X%7bx%7d_Y%7by%7d.tif.json",
+    {
+      "type": "polygon",
+      "options": {
+        "color": "#3388ff"
+      },
+      "latlngs": [
+        [{
+          "lat": -120.9682411169839,
+          "lng": 175.25
+        }, {
+          "lat": -138.4538052610675,
+          "lng": 176.75
+        }, {
+          "lat": -137.45463016711986,
+          "lng": 196.25
+        }, {
+          "lat": -131.95916715040786,
+          "lng": 208.75
+        }, {
+          "lat": -120.46865357001008,
+          "lng": 217.5
+        }, {
+          "lat": -107.47937734869085,
+          "lng": 216.25
+        }, {
+          "lat": -97.2378326357276,
+          "lng": 204.25
+        }, {
+          "lat": -87.74566924322508,
+          "lng": 191
+        }, {
+          "lat": -102.9830894259265,
+          "lng": 176.5
+        }, {
+          "lat": -109.2279337630992,
+          "lng": 184.75
+        }, {
+          "lat": -117.22133451468028,
+          "lng": 184.25
+        }]
+      ],
+      "name": "Drawn region",
+      "popup": "<strong>Statistics: </strong><p>Area: 146521.4058136543  µm^2</p><p>Volume : 307694.95220867405  µm^3</p><strong>Counts:</strong><p>puncta : 217914</p><strong>Densities:</strong><p>area density puncta : 1.5 points / µm^2</p><p>volume density puncta : 0.71 points / µm^3</p>"
+    }
+  ],
+  "crs": "simple",
+  "author": "Gherardo Varando",
+  "basePath": "http://cajalbbp.es/maps/hippocampus_mouse_HBP21_id4_40_vglut1/"
+}
