@@ -1,7 +1,7 @@
 {
 	"name": "map-viewer",
 	"version": "0.6.0",
-	"description": "map visualizer from map.json",
+	"description": "visualize and edit map.json",
 	"keywords": [],
 	"license": "MIT",
 	"main": "./lib/map-viewer",
@@ -10,7 +10,7 @@
 		"ajv": "^5.5.0",
 		"leaflet": "^1.6.0",
 		"leaflet-csvtiles": "^0.4.0",
-		"leaflet-map-builder": "^2.0.1",
+		"leaflet-map-builder": "^2.0.2",
 		"leaflet-multilevel": "0.0.1"
 	},
 	"engines": {
@@ -19,8 +19,7 @@
 	"activationCommands": {
 		"atom-workspace": [
 			"map-viewer:open",
-			"map-viewer:newmap",
-			"map-viewer:newtilelayer"
+			"map-viewer:newmap"
 		]
 	},
 	"styleSheets": [

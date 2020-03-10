@@ -1,0 +1,62 @@
+{
+  "layers": {
+    "layer_2": {
+      "name": "puncta",
+      "author": "gherardo",
+      "type": "csvTiles",
+      "url": "points/points_Hipocampo_HBP21_id4_corte_40_vGlut1_X{x}_Y{y}.tif.csv",
+      "options": {
+        "tileSize": 1024,
+        "size": 45056,
+        "bounds": [
+          [-256, 0],
+          [0, 256]
+        ],
+        "localRS": true,
+        "grid": true,
+        "color": "blue",
+        "fillColor": "blue",
+        "columns": {
+          "x": 0,
+          "y": 1,
+          "z": 2
+        },
+        "radius": 5
+      },
+      "role": "points"
+    },
+    "layer_3": {
+      "multiLevel": true,
+      "baseLayer": true,
+      "name": "vglut1",
+      "options": {
+        "minLevel": 1,
+        "maxLevel": 15,
+        "date": "Thu Dec 14 20:13:42 CET 2017",
+        "unitCal": "µm",
+        "sizeCal": 2581.6727552,
+        "maxNativeZoom": 7,
+        "tileSize": [256, 162.90909],
+        "depthCal": 2.1,
+        "bounds": [
+          [-256, 0],
+          [0, 256]
+        ],
+        "minNativeZoom": 0,
+        "nSlice": 15,
+        "attribution": "<a href='http://cajalbbp.es/'> CajalBBP </a> | <a href= 'https://www.frontiersin.org/articles/10.3389/fnana.2018.00037/full'>article</a>"
+      },
+      "type": "tileLayer",
+      "url": "vglut1_tiles_all/{level}/{z}/{x}/{y}.png",
+      "role": "calibration"
+    }
+  },
+  "zoom": 3,
+  "center":[-100,100],
+  "type": "map",
+  "name": "hippocampus_mouse_HBP21_id4_40_vglut1",
+  "date": "Mon Nov 06 2017",
+  "crs": "simple",
+  "multilevel": true,
+  "basePath": "http://cajalbbp.es/maps/hippocampus_mouse_HBP21_id4_40_vglut1/"
+}

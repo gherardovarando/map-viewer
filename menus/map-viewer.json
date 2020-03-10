@@ -1,7 +1,6 @@
 {
   "context-menu": {
-    "atom-text-editor": [
-      {
+    "atom-text-editor": [{
         "label": "Toggle Map Viewer",
         "command": "map-viewer:open"
       },
@@ -12,32 +11,37 @@
       {
         "label": "New marker",
         "command": "map-viewer:newmarker"
+      },
+      {
+        "label": "New polygon",
+        "command": "map-viewer:newpolygon"
+      },
+      {
+        "label": "New polyline",
+        "command": "map-viewer:newpolyline"
+      },
+      {
+        "label": "New GeoJSON",
+        "command": "map-viewer:newgeojson"
       }
     ]
   },
-  "menu": [
-    {
-      "label": "Packages",
-      "submenu": [
+  "menu": [{
+    "label": "Packages",
+    "submenu": [{
+      "label": "Map Viewer",
+      "submenu": [{
+          "label": "Open",
+          "command": "map-viewer:open"
+        },
         {
-          "label": "Map Viewer",
-          "submenu": [
-            {
-              "label": "Open",
-              "command": "map-viewer:open"
-            },
-            {
-              "label": "New",
-              "submenu":[
-                {
-                  "label": "Map",
-                  "command": "map-viewer:newmap"
-                }
-              ]
-            }
-          ]
+          "label": "New",
+          "submenu": [{
+            "label": "Map",
+            "command": "map-viewer:newmap"
+          }]
         }
       ]
-    }
-  ]
+    }]
+  }]
 }
