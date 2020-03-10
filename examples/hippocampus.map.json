@@ -58,5 +58,44 @@
   "date": "Mon Nov 06 2017",
   "crs": "simple",
   "multilevel": true,
-  "basePath": "http://cajalbbp.es/maps/hippocampus_mouse_HBP21_id4_40_vglut1/"
+  "basePath": "http://cajalbbp.es/maps/hippocampus_mouse_HBP21_id4_40_vglut1/",
+  "citation": [{
+    "type": "article",
+    "title": "MultiMap: A Tool to Automatically Extract and Analyse Spatial Microscopic Data From Large Stacks of Confocal Microscopy Images",
+    "year": "2018",
+    "author": [{
+        "name": "Varando, Gherardo"
+      },
+      {
+        "name": "Benavides-Piccione, Ruth"
+      },
+      {
+        "name": "Mu\u00f1oz, Alberto"
+      },
+      {
+        "name": "Kastanauskaite, Asta"
+      },
+      {
+        "name": "Bielza, Concha"
+      },
+      {
+        "name": "Larra\u00f1aga, Pedro"
+      },
+      {
+        "name": "DeFelipe, Javier"
+      }
+    ],
+    "journal": {
+      "name": "Frontiers in Neuroanatomy",
+      "volume": "12",
+      "pages": "37"
+    },
+    "link": [{
+      "url": "https://www.frontiersin.org/articles/10.3389/fnana.2018.00037/"
+    }],
+    "identifier": [{
+      "type": "doi",
+      "id": "10.3389/fnana.2018.00037"
+    }]
+  }]
 }
