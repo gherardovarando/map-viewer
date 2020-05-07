@@ -1,450 +1,458 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
-    "id": "http://github.com/gherardovarando/map.schema.json",
-    "description": "schema for a map.json object",
-    "type": "object",
-    "required": ["type"],
-    "properties": {
-        "type": {
-            "type": "string",
-            "enum": ["map", "MAP", "Map"]
-        },
-        "name": {
-            "description": "name of the map",
-            "type": "string"
-        },
-        "layers": {
-            "description": "layers list",
-            "type": ["array", "object"],
-            "items": {
-                "$ref": "#/definitions/layer"
-            },
-            "properties": {},
-            "additionalProperties": {
-                "$ref": "#/definitions/layer"
-            }
-        },
-        "author": {
-            "description": "author of the map",
-            "type": "string"
-        },
-        "date": {
-            "description": "date of creation",
-            "type": "string"
-        },
-        "crs": {
-            "description": "preferred cordinate reference system",
-            "type": "string",
-            "enum": ["simple", "EPSG3395", "EPSG3857", "EPSG4326", "custom"]
-        }
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "id": "http://github.com/gherardovarando/map.schema.json",
+  "description": "schema for a map.json object",
+  "type": "object",
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["map", "MAP", "Map"]
     },
-    "definitions": {
-        "popup": {
-            "description": "popup",
-            "anyOf": [{
-                    "type": "string"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "content": {
-                            "type": "string"
-                        },
-                        "options": {
-                            "type": "object"
-                        }
-                    }
-                }
-            ]
+    "name": {
+      "description": "name of the map",
+      "type": "string"
+    },
+    "layers": {
+      "description": "layers list",
+      "type": ["array", "object"],
+      "items": {
+        "$ref": "#/definitions/layer"
+      },
+      "properties": {},
+      "additionalProperties": {
+        "$ref": "#/definitions/layer"
+      }
+    },
+    "author": {
+      "description": "author of the map",
+      "type": "string"
+    },
+    "date": {
+      "description": "date of creation",
+      "type": "string"
+    },
+    "crs": {
+      "description": "preferred cordinate reference system",
+      "type": "string",
+      "enum": ["simple", "EPSG3395", "EPSG3857", "EPSG4326", "custom"]
+    }
+  },
+  "definitions": {
+    "popup": {
+      "description": "popup",
+      "anyOf": [{
+          "type": "string"
         },
-        "tooltip": {
-            "description": "tooltip",
-            "anyOf": [{
-                    "type": "string"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "content": {
-                            "type": "string"
-                        },
-                        "options": {
-                            "type": "object"
-                        }
-                    }
-                }
-            ]
+        {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "options": {
+              "type": "object"
+            }
+          }
+        }
+      ]
+    },
+    "tooltip": {
+      "description": "tooltip",
+      "anyOf": [{
+          "type": "string"
         },
-        "latlng": {
-            "description": "latitude longitude",
-            "anyOf": [{
+        {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "options": {
+              "type": "object"
+            }
+          }
+        }
+      ]
+    },
+    "latlng": {
+      "description": "latitude longitude",
+      "anyOf": [{
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2
+        },
+        {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            }
+          },
+          "required": ["lat", "lng"]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "lon": {
+              "type": "number"
+            },
+            "lat": {
+              "type": "number"
+            }
+          },
+          "required": ["lat", "lng"]
+        }
+      ]
+    },
+    "latlngs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/latlng"
+      }
+    },
+    "layer": {
+      "description": "layer",
+      "anyOf": [{
+          "type": "string"
+        },
+        {
+          "allOf": [{
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "role": {
+                  "anyOf": [{
+                    "type": "string"
+                  }, {
                     "type": "array",
                     "items": {
-                        "type": "number"
-                    },
-                    "minItems": 2
+                      "type": "string"
+                    }
+                  }]
                 },
-                {
-                    "type": "object",
-                    "properties": {
-                        "lat": {
-                            "type": "number"
-                        },
-                        "lng": {
-                            "type": "number"
-                        }
-                    },
-                    "required": ["lat", "lng"]
+                "author": {
+                  "type": "string"
                 },
-                {
-                    "type": "object",
-                    "properties": {
-                        "lon": {
-                            "type": "number"
-                        },
-                        "lat": {
-                            "type": "number"
-                        }
-                    },
-                    "required": ["lat", "lng"]
+                "details": {
+                  "type": "string"
+                },
+                "multiLevel": {
+                  "type": "boolean"
+                },
+                "baseLayer": {
+                  "type": "boolean"
+                },
+                "popup": {
+                  "$ref": "#/definitions/popup"
+                },
+                "tooltip": {
+                  "$ref": "#/definitions/tooltip"
                 }
-            ]
+              }
+            },
+            {
+              "anyOf": [{
+                "$ref": "#/definitions/tileLayer"
+              }, {
+                "$ref": "#/definitions/tileLayerWMS"
+              }, {
+                "$ref": "#/definitions/imageOverlay"
+              }, {
+                "$ref": "#/definitions/featureGroup"
+              }, {
+                "$ref": "#/definitions/layerGroup"
+              }, {
+                "$ref": "#/definitions/GeoJSON"
+              }, {
+                "$ref": "#/definitions/polyline"
+              }, {
+                "$ref": "#/definitions/polygon"
+              }, {
+                "$ref": "#/definitions/rectangle"
+              }, {
+                "$ref": "#/definitions/circle"
+              }, {
+                "$ref": "#/definitions/marker"
+              }, {
+                "$ref": "#/definitions/circleMarker"
+              }, {
+                "$ref": "#/definitions/csvTiles"
+              }, {
+                "$ref": "#/definitions/deepZoom"
+              }]
+            }
+          ]
+        }
+      ]
+    },
+    "tileLayer": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["tileLayer"]
+        },
+        "url": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object"
+        }
+      },
+      "required": ["url"]
+    },
+    "tileLayerWMS": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["tileLayerWMS"]
+        },
+        "url": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object"
+        }
+      },
+      "required": ["url"]
+    },
+    "imageOverlay": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["imageOverlay", "imageLayer"]
+        },
+        "url": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object"
+        }
+      },
+      "required": ["url"]
+    },
+    "GeoJSON": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "anyOf": [{
+              "type": "object"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": ["data"]
+    },
+    "polyline": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["polyline"]
         },
         "latlngs": {
+          "anyOf": [{
+            "$ref": "#/definitions/latlngs"
+          }, {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/latlng"
+              "$ref": "#/definitions/latlngs"
             }
+          }]
         },
-        "layer": {
-            "description": "layer",
-            "anyOf": [{
-                "allOf": [{
-                        "type": "object",
-                        "required": ["type"],
-                        "properties": {
-                            "type": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            },
-                            "role": {
-                                "anyOf": [{
-                                    "type": "string"
-                                }, {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                }]
-                            },
-                            "author": {
-                                "type": "string"
-                            },
-                            "details": {
-                                "type": "string"
-                            },
-                            "multiLevel": {
-                                "type": "boolean"
-                            },
-                            "baseLayer": {
-                                "type": "boolean"
-                            },
-                            "popup": {
-                                "$ref": "#/definitions/popup"
-                            },
-                            "tooltip": {
-                                "$ref": "#/definitions/tooltip"
-                            }
-                        }
-                    },
-                    {
-                        "anyOf": [{
-                            "$ref": "#/definitions/tileLayer"
-                        }, {
-                            "$ref": "#/definitions/tileLayerWMS"
-                        }, {
-                            "$ref": "#/definitions/imageOverlay"
-                        }, {
-                            "$ref": "#/definitions/featureGroup"
-                        }, {
-                            "$ref": "#/definitions/layerGroup"
-                        }, {
-                            "$ref": "#/definitions/GeoJSON"
-                        }, {
-                            "$ref": "#/definitions/polyline"
-                        }, {
-                            "$ref": "#/definitions/polygon"
-                        }, {
-                            "$ref": "#/definitions/rectangle"
-                        }, {
-                            "$ref": "#/definitions/circle"
-                        }, {
-                            "$ref": "#/definitions/marker"
-                        }, {
-                            "$ref": "#/definitions/circleMarker"
-                        }, {
-                            "$ref": "#/definitions/csvTiles"
-                        }, {
-                            "$ref": "#/definitions/deepZoom"
-                        }]
-                    }
-                ]
-            }, {
-                "type": "string"
-            }]
-        },
-        "tileLayer": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["tileLayer"]
-                },
-                "url": {
-                    "type": "string"
-                },
-                "options": {
-                    "type": "object"
-                }
-            },
-            "required": ["url"]
-        },
-        "tileLayerWMS": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["tileLayerWMS"]
-                },
-                "url": {
-                    "type": "string"
-                },
-                "options": {
-                    "type": "object"
-                }
-            },
-            "required": ["url"]
-        },
-        "imageOverlay": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["imageOverlay", "imageLayer"]
-                },
-                "url": {
-                    "type": "string"
-                },
-                "options": {
-                    "type": "object"
-                }
-            },
-            "required": ["url"]
-        },
-        "GeoJSON": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "object"
-                }
-            },
-            "required": ["data"]
-        },
-        "polyline": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["polyline"]
-                },
-                "latlngs": {
-                    "anyOf": [{
-                        "$ref": "#/definitions/latlngs"
-                    }, {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/definitions/latlngs"
-                        }
-                    }]
-                },
-                "options": {
-                    "type": "object"
-                }
-            },
-            "required": ["latlngs"]
-        },
-        "polygon": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["polygon"]
-                },
-                "latlngs": {
-                    "anyOf": [{
-                        "$ref": "#/definitions/latlngs"
-                    }, {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/definitions/latlngs"
-                        },
-                        "maxItems": 2
-                    }, {
-                        "type": "array",
-                        "items": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/latlngs"
-                            },
-                            "maxItems": 2
-                        }
-                    }]
-                },
-                "options": {
-                    "type": "object"
-                }
-            },
-            "required": ["type", "latlngs"]
-        },
-        "rectangle": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["rectangle"]
-                },
-                "latlngs": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/latlng"
-                    },
-                    "maxItems": 4,
-                    "minItems": 2
-                }
-            },
-            "required": ["type", "latlngs"]
-        },
-        "circle": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["circle"]
-                },
-                "latlng": {
-                    "$ref": "#/definitions/latlng"
-                },
-                "options": {
-                    "type": "object",
-                    "properties": {
-                        "radius": {
-                            "type": "number"
-                        }
-                    }
-                }
-            },
-            "required": ["type", "latlng"]
-        },
-        "marker": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["marker"]
-                },
-                "latlng": {
-                    "$ref": "#/definitions/latlng"
-                },
-                "options": {
-                    "type": "object"
-                }
-            },
-            "required": ["type", "latlng"]
-        },
-        "circleMarker": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["circlemarker", "circleMarker"]
-                },
-                "latlng": {
-                    "$ref": "#/definitions/latlng"
-                },
-                "options": {
-                    "type": "object",
-                    "properties": {
-                        "radius": {
-                            "type": "number"
-                        }
-                    }
-                }
-            },
-            "required": ["type", "latlng"]
-        },
-        "featureGroup": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["featureGroup"]
-                },
-                "layers": {
-                    "description": "layers list",
-                    "type": ["array", "object"],
-                    "items": {
-                        "$ref": "#/definitions/layer"
-                    },
-                    "properties": {},
-                    "additionalProperties": {
-                        "$ref": "#/definitions/layer"
-                    }
-                }
-            },
-            "required": ["type"]
-        },
-        "layerGroup": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["layerGroup"]
-                },
-                "layers": {
-                    "description": "layers list",
-                    "type": ["array", "object"],
-                    "items": {
-                        "$ref": "#/definitions/layer"
-                    },
-                    "properties": {},
-                    "additionalProperties": {
-                        "$ref": "#/definitions/layer"
-                    }
-                }
-            },
-            "required": ["type"]
-        },
-        "csvTiles": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["csvTiles"]
-                }
-            },
-            "required": ["type"]
-        },
-        "deepZoom": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["deepZoom"]
-                }
-            },
-            "required": ["type"]
+        "options": {
+          "type": "object"
         }
+      },
+      "required": ["latlngs"]
+    },
+    "polygon": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["polygon"]
+        },
+        "latlngs": {
+          "anyOf": [{
+            "$ref": "#/definitions/latlngs"
+          }, {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/latlngs"
+            },
+            "maxItems": 2
+          }, {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/latlngs"
+              },
+              "maxItems": 2
+            }
+          }]
+        },
+        "options": {
+          "type": "object"
+        }
+      },
+      "required": ["type", "latlngs"]
+    },
+    "rectangle": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["rectangle"]
+        },
+        "latlngs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/latlng"
+          },
+          "maxItems": 4,
+          "minItems": 2
+        }
+      },
+      "required": ["type", "latlngs"]
+    },
+    "circle": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["circle"]
+        },
+        "latlng": {
+          "$ref": "#/definitions/latlng"
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "radius": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": ["type", "latlng"]
+    },
+    "marker": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["marker"]
+        },
+        "latlng": {
+          "$ref": "#/definitions/latlng"
+        },
+        "options": {
+          "type": "object"
+        }
+      },
+      "required": ["type", "latlng"]
+    },
+    "circleMarker": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["circlemarker", "circleMarker"]
+        },
+        "latlng": {
+          "$ref": "#/definitions/latlng"
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "radius": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": ["type", "latlng"]
+    },
+    "featureGroup": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["featureGroup"]
+        },
+        "layers": {
+          "description": "layers list",
+          "type": ["array", "object"],
+          "items": {
+            "$ref": "#/definitions/layer"
+          },
+          "properties": {},
+          "additionalProperties": {
+            "$ref": "#/definitions/layer"
+          }
+        }
+      },
+      "required": ["type"]
+    },
+    "layerGroup": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["layerGroup"]
+        },
+        "layers": {
+          "description": "layers list",
+          "type": ["array", "object"],
+          "items": {
+            "$ref": "#/definitions/layer"
+          },
+          "properties": {},
+          "additionalProperties": {
+            "$ref": "#/definitions/layer"
+          }
+        }
+      },
+      "required": ["type"]
+    },
+    "csvTiles": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["csvTiles"]
+        }
+      },
+      "required": ["type"]
+    },
+    "deepZoom": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["deepZoom"]
+        }
+      },
+      "required": ["type"]
     }
+  }
 }

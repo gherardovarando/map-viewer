@@ -57,9 +57,7 @@ Copy paste the following map.json in your editor and lunch the map-viewer (e.g. 
 }
 ```
 
-### Examples
-
-Check more map examples in the `examples` folder.
+Check more map examples in the [examples.map.json](https://github.com/gherardovarando/examples.map.json) repository.
 
 
 ### LICENSE

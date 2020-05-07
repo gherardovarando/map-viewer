@@ -2,7 +2,9 @@
   "atom-workspace": {
     "ctrl-alt-m": "map-viewer:open",
     "ctrl-pageup": "map-viewer:levelUp",
-    "ctrl-pagedown": "map-viewer:levelDown"
+    "ctrl-pagedown": "map-viewer:levelDown",
+    "ctrl-alt-v l":    "map-viewer:polyline",
+    "ctrl-alt-v p":    "map-viewer:polygon"
   },
   "atom-text-editor":{
     "ctrl-alt-n m": "map-viewer:newmarker",
