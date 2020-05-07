@@ -1,6 +1,6 @@
 ## Map viewer for Atom
 
-#### an Atom package for visualizing [map.json](https://github.com/gherardovarando/map.schema.json) file.
+#### an Atom package for visualizing and editing [map.json](https://github.com/gherardovarando/map.schema.json) files.
 
 ##### it uses [leaflet](http://leafletjs.com/) and [leaflet-map-builder](https://www.npmjs.com/package/leaflet-map-builder).
 
@@ -16,12 +16,7 @@
 
 Some layer templates can be loaded from the context menu (right-click) on the editor or via keybindings: `ctrl-alt-n` followed by `m` (marker), `p` (polygon), `l` (polyline), `t` (tile layer), `g` (GeoJSON).
 
-###### Changing the csr
-
-If your map.json has a csr valid field the corresponding csr will be loaded.
-
-
-###### Minimal example
+#### Minimal example
 
 Copy paste the following map.json in your editor and lunch the map-viewer (e.g. with `ctrl-alt-m`).
 
