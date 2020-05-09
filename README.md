@@ -12,11 +12,13 @@
 
 - The map will be updated every time the file is saved.
 
+- Switch on/off layer control in package setting.
+
 #### Adding layers
 
 Some layer templates can be loaded from the context menu (right-click) on the editor or via keybindings: `ctrl-alt-n` followed by `m` (marker), `p` (polygon), `l` (polyline), `t` (tile layer), `g` (GeoJSON).
 
-Similarly, you can activate drawing capabilities via `ctrl-alt-v` followed by `p` (polygon) or `l` (polyline), once you finish drawing the layer the skeleton of the layer configuration is available in the clipboard, just paste the text in the configuration file and save it to reload the map.
+Similarly, you can activate drawing capabilities via `ctrl-alt-v` followed by `p` (polygon), `l` (polyline), .... Once drawing is done the skeleton of the layer configuration is available in the clipboard, just paste the text in the configuration file and save it to reload the map.
 
 #### Minimal example
 
