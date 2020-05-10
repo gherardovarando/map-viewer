@@ -1,6 +1,6 @@
 {
 	"name": "map-viewer",
-	"version": "0.7.1",
+	"version": "0.7.2",
 	"description": "visualize and edit map.json",
 	"keywords": [],
 	"license": "MIT",
