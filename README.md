@@ -10,7 +10,7 @@
 
 - Create an empty map.json with **Packages -> Map Viewer -> New -> Map** and manually add layers.
 
-- The map will be updated every time the file is saved.
+- The map is updated every time the configuration file is saved.
 
 - Switch on/off layer control in package setting.
 
